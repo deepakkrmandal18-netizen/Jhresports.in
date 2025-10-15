@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>JHR ESPORTS</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      position: relative;
+      padding: 16px;
+      background: rgba(0,0,0,0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    header img.logo {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 50px;
+      height: auto;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #fff;
+    }
+    nav {
+      background: rgba(0,0,0,0.8);
+      display: flex;
+      justify-content: center;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 16px;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      background: rgba(255,255,255,0.2);
+    }
+    .content {
+      flex: 1;
+      padding: 24px;
+      text-align: center;
+      background: rgba(0,0,0,0.5);
+      margin: 16px;
+      border-radius: 8px;
+    }
+    .content .btn-explore {
+      background: #e53935;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 18px;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 24px;
+    }
+    .contact-section {
+      background: rgba(0,0,0,0.8);
+      padding: 24px;
+      text-align: center;
+      border-radius: 8px;
+      margin: 16px;
+    }
+    .contact-section a, .contact-section p {
+      color: #fff;
+      font-size: 16px;
+      margin: 8px 0;
+      text-decoration: none;
+    }
+    .contact-section strong {
+      color: #e53935;
+      letter-spacing: 1px;
+    }
+    footer {
+      background: rgba(0,0,0,0.9);
+      color: #bbb;
+      text-align: center;
+      padding: 12px 0;
+      font-size: 14px;
+    }
+    @media (min-width: 600px) {
+      body {
+        max-width: 480px;
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="JHR ESPORTS Logo" class="logo" />
+    <h1>JHR ESPORTS</h1>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div id="home" class="content">
+    <a href="https://www.instagram.com/jhresports.in" target="_blank" class="btn-explore">Explore</a>
+  </div>
+
+  <div id="about" class="content">
+    <h2>About Us</h2>
+    <p>𝙂𝙍𝙊𝙒𝙄𝙉𝙂 𝙀𝙎𝙋𝙊𝙍𝙏𝙎 𝙊𝙍𝙂 𝙞𝙉 𝙞𝙉𝘿𝙄𝘼 🇮🇳<br>• 𝙅𝙃𝙍 𝙀𝙎𝙋𝙊𝙍𝙏𝙎</p>
+  </div>
+
+  <div id="contact" class="contact-section">
+    <h2>Contact Us</h2>
+    <p><strong>GMAIL:</strong> <a href="mailto:jhresports@gmail.com">jhresports@gmail.com</a></p>
+    <p><strong>PHONE:</strong> <a href="tel:8757298967">+91 8757298967</a></p>
+  </div>
+
+  <footer>
+    &copy; 2025 JHR ESPORTS. All Rights Reserved.
+  </footer>
+</body>
+</html>
