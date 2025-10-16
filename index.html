@@ -171,4 +171,120 @@
       align-items: center;
       justify-content: center;
       z-index: 1000;
-      animation: fadeIn 0
+      animation: fadeIn 0.8s ease forwards;
+      backdrop-filter: blur(6px);
+    }
+
+    .welcome-box {
+      background: linear-gradient(145deg, #e53935, #ff4b4b);
+      color: white;
+      padding: 40px 60px;
+      border-radius: 15px;
+      font-size: 28px;
+      font-weight: bold;
+      box-shadow: 0 0 40px rgba(255,0,0,0.6);
+      transform: perspective(600px) rotateY(10deg) scale(0.9);
+      animation: pop3D 1.5s ease forwards;
+    }
+
+    @keyframes pop3D {
+      0% { opacity: 0; transform: perspective(600px) rotateY(30deg) scale(0.6); }
+      60% { opacity: 1; transform: perspective(600px) rotateY(0deg) scale(1.05); }
+      100% { transform: perspective(600px) rotateY(0deg) scale(1); }
+    }
+
+    @media (min-width: 600px) {
+      body { max-width: 480px; margin: 0 auto; }
+    }
+  </style>
+</head>
+<body>
+  <!-- 🔥 3D Welcome Popup -->
+  <div class="welcome-popup" id="welcomePopup">
+    <div class="welcome-box">
+      WELCOME 🙏🏻
+    </div>
+  </div>
+
+  <header>
+    <img src="logo.png" alt="JHR ESPORTS Logo" class="logo" />
+    <h1>JHR ESPORTS</h1>
+  </header>
+
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#" id="scheduleBtn">SCHEDULE</a>
+  </nav>
+
+  <div id="home" class="content">
+    <a href="https://www.instagram.com/jhresports.in" target="_blank" class="btn-insta">
+      <img src="insta.png" alt="Instagram" /> INSTA
+    </a>
+  </div>
+
+  <div id="lineup" class="content">
+    <h2>JHR ESP LINEUP</h2>
+    <p>
+      𝟷 ᴘʟᴀʏᴇʀ = 𝙅𝙃𝙍 • 𝙈𝙊𝙃𝙄𝙏 <br>
+      𝟸 ᴘʟᴀʏᴇʀ = 𝙅𝙃𝙍 • 𝙁𝙍𝙄𝙀𝙕𝘼 <br>
+      𝟹 ᴘʟᴀʏᴇʀ = 𝙅𝙃𝙍 • 𝘾𝙊𝙁𝙁𝙄𝙉 <br>
+      𝟺 ᴘʟᴀʏᴇʀ = 𝙅𝙃𝙍 • 𝙐𝙇𝙏𝙄𝙈𝘼𝙏𝙀
+    </p>
+  </div>
+
+  <div id="contact" class="contact-section">
+    <h2>CONTACT US</h2>
+    <p><strong>GMAIL:</strong> <a href="mailto:jhresports18@gmail.com">jhresports18@gmail.com</a></p>
+    <p><strong>PHONE:</strong> <a href="tel:8757298967">+91 8757298967</a></p>
+  </div>
+
+  <footer>
+    &copy; 2025 JHR ESPORTS. All Rights Reserved.
+  </footer>
+
+  <!-- Schedule Popup -->
+  <div class="popup-overlay" id="schedulePopup">
+    <div class="popup-content">
+      <h2>TOURNAMENT SCHEDULE</h2>
+      <p>M1 - ERANGEL &nbsp;&nbsp; <strong>9:12</strong></p>
+      <p>M2 - MIRAMAR &nbsp;&nbsp; <strong>9:52</strong></p>
+      <p>M3 - RONDO &nbsp;&nbsp; <strong>10:32</strong></p>
+      <button class="close-btn" id="closePopup">Close</button>
+    </div>
+  </div>
+
+  <script>
+    // Schedule Popup Script
+    const scheduleBtn = document.getElementById('scheduleBtn');
+    const schedulePopup = document.getElementById('schedulePopup');
+    const closePopup = document.getElementById('closePopup');
+
+    scheduleBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      schedulePopup.style.display = 'flex';
+    });
+
+    closePopup.addEventListener('click', () => {
+      schedulePopup.style.display = 'none';
+    });
+
+    schedulePopup.addEventListener('click', (e) => {
+      if (e.target === schedulePopup) {
+        schedulePopup.style.display = 'none';
+      }
+    });
+
+    // 🔥 Auto-Close Welcome Popup After 3 Sec
+    window.addEventListener('load', () => {
+      const welcomePopup = document.getElementById('welcomePopup');
+      setTimeout(() => {
+        welcomePopup.style.opacity = '0';
+        welcomePopup.style.transition = 'opacity 0.6s ease';
+        setTimeout(() => {
+          welcomePopup.style.display = 'none';
+        }, 600);
+      }, 3000);
+    });
+  </script>
+</body>
+</html>
