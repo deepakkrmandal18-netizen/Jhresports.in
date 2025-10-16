@@ -113,7 +113,7 @@
       font-size: 14px;
     }
 
-    /* Schedule Popup */
+    /* Popup Styles */
     .popup-overlay {
       position: fixed;
       top: 0; left: 0;
@@ -158,19 +158,13 @@
       from { opacity: 0; transform: scale(0.9); }
       to { opacity: 1; transform: scale(1); }
     }
+
     @media (min-width: 600px) {
       body { max-width: 480px; margin: 0 auto; }
     }
   </style>
 </head>
 <body>
-  <!-- 🔥 3D Welcome Popup -->
-  <div class="welcome-popup" id="welcomePopup">
-    <div class="welcome-box">
-      WELCOME 🙏🏻
-    </div>
-  </div>
-
   <header>
     <img src="logo.png" alt="JHR ESPORTS Logo" class="logo" />
     <h1>JHR ESPORTS</h1>
@@ -199,7 +193,7 @@
 
   <div id="contact" class="contact-section">
     <h2>CONTACT US</h2>
-    <p><strong>GMAIL:</strong> <a href="mailto:jhresports18@gmail.com">jhresports18@gmail.com</a></p>
+    <p><strong>GMAIL:</strong> <a href="mailto:jhresports@gmail.com">jhresports@gmail.com</a></p>
     <p><strong>PHONE:</strong> <a href="tel:8757298967">+91 8757298967</a></p>
   </div>
 
@@ -207,48 +201,39 @@
     &copy; 2025 JHR ESPORTS. All Rights Reserved.
   </footer>
 
-  <!-- Schedule Popup -->
+  <!-- Popup -->
   <div class="popup-overlay" id="schedulePopup">
     <div class="popup-content">
       <h2>TOURNAMENT SCHEDULE</h2>
       <p>M1 - ERANGEL &nbsp;&nbsp; <strong>9:12</strong></p>
       <p>M2 - MIRAMAR &nbsp;&nbsp; <strong>9:52</strong></p>
-      <p>M3 - RONDO &nbsp;&nbsp; <strong>10:32</strong></p>
+      <p>M3 - RONDO &nbsp;&nbsp; <strong> 10:32</strong></p>
       <button class="close-btn" id="closePopup">Close</button>
     </div>
   </div>
 
   <script>
-    // Schedule Popup Script
     const scheduleBtn = document.getElementById('scheduleBtn');
     const schedulePopup = document.getElementById('schedulePopup');
     const closePopup = document.getElementById('closePopup');
 
     scheduleBtn.addEventListener('click', (e) => {
       e.preventDefault();
+      document.body.classList.add('blurred');
       schedulePopup.style.display = 'flex';
     });
 
     closePopup.addEventListener('click', () => {
       schedulePopup.style.display = 'none';
+      document.body.classList.remove('blurred');
     });
 
+    // Optional: close popup when clicking outside
     schedulePopup.addEventListener('click', (e) => {
       if (e.target === schedulePopup) {
         schedulePopup.style.display = 'none';
+        document.body.classList.remove('blurred');
       }
-    });
-
-    // 🔥 Auto-Close Welcome Popup After 3 Sec
-    window.addEventListener('load', () => {
-      const welcomePopup = document.getElementById('welcomePopup');
-      setTimeout(() => {
-        welcomePopup.style.opacity = '0';
-        welcomePopup.style.transition = 'opacity 0.6s ease';
-        setTimeout(() => {
-          welcomePopup.style.display = 'none';
-        }, 600);
-      }, 3000);
     });
   </script>
 </body>
