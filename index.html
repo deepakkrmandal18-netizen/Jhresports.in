@@ -158,41 +158,6 @@
       from { opacity: 0; transform: scale(0.9); }
       to { opacity: 1; transform: scale(1); }
     }
-
-    /* 🔥 Welcome Popup (3D style) */
-    .welcome-popup {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.7);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-      animation: fadeIn 0.8s ease forwards;
-      backdrop-filter: blur(6px);
-    }
-
-    .welcome-box {
-      background: linear-gradient(145deg, #e53935, #ff4b4b);
-      color: white;
-      padding: 40px 60px;
-      border-radius: 15px;
-      font-size: 28px;
-      font-weight: bold;
-      box-shadow: 0 0 40px rgba(255,0,0,0.6);
-      transform: perspective(600px) rotateY(10deg) scale(0.9);
-      animation: pop3D 1.5s ease forwards;
-    }
-
-    @keyframes pop3D {
-      0% { opacity: 0; transform: perspective(600px) rotateY(30deg) scale(0.6); }
-      60% { opacity: 1; transform: perspective(600px) rotateY(0deg) scale(1.05); }
-      100% { transform: perspective(600px) rotateY(0deg) scale(1); }
-    }
-
     @media (min-width: 600px) {
       body { max-width: 480px; margin: 0 auto; }
     }
