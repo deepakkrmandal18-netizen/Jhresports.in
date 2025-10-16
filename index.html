@@ -18,7 +18,6 @@
       min-height: 100vh;
       transition: filter 0.3s ease;
     }
-
     header {
       position: relative;
       padding: 16px;
@@ -159,6 +158,27 @@
       to { opacity: 1; transform: scale(1); }
     }
 
+    /* Login Form Styles */
+    .login-form input {
+      width: 90%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #e53935;
+      border-radius: 4px;
+      background: #111;
+      color: white;
+    }
+    .login-form button {
+      background: #e53935;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+
     @media (min-width: 600px) {
       body { max-width: 480px; margin: 0 auto; }
     }
@@ -173,6 +193,7 @@
   <nav>
     <a href="#home">HOME</a>
     <a href="#" id="scheduleBtn">SCHEDULE</a>
+    <a href="#" id="loginBtn">LOGIN</a>
   </nav>
 
   <div id="home" class="content">
@@ -201,7 +222,7 @@
     &copy; 2025 JHR ESPORTS. All Rights Reserved.
   </footer>
 
-  <!-- Popup -->
+  <!-- Schedule Popup -->
   <div class="popup-overlay" id="schedulePopup">
     <div class="popup-content">
       <h2>TOURNAMENT SCHEDULE</h2>
@@ -212,28 +233,42 @@
     </div>
   </div>
 
+  <!-- Login/Register Popup -->
+  <div class="popup-overlay" id="loginPopup">
+    <div class="popup-content">
+      <h2>LOGIN / REGISTER</h2>
+      <form class="login-form" action="https://formsubmit.co/jhresports18@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New Login/Register on JHR ESPORTS">
+        <input type="text" name="Name" placeholder="Your Name" required>
+        <input type="email" name="Email" placeholder="Your Email" required>
+        <input type="password" name="Password" placeholder="Your Password" required>
+        <button type="submit">Submit</button>
+      </form>
+      <button class="close-btn" id="closeLogin">Close</button>
+    </div>
+  </div>
+
   <script>
     const scheduleBtn = document.getElementById('scheduleBtn');
     const schedulePopup = document.getElementById('schedulePopup');
     const closePopup = document.getElementById('closePopup');
+    const loginBtn = document.getElementById('loginBtn');
+    const loginPopup = document.getElementById('loginPopup');
+    const closeLogin = document.getElementById('closeLogin');
 
     scheduleBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      document.body.classList.add('blurred');
       schedulePopup.style.display = 'flex';
     });
-
     closePopup.addEventListener('click', () => {
       schedulePopup.style.display = 'none';
-      document.body.classList.remove('blurred');
     });
-
-    // Optional: close popup when clicking outside
-    schedulePopup.addEventListener('click', (e) => {
-      if (e.target === schedulePopup) {
-        schedulePopup.style.display = 'none';
-        document.body.classList.remove('blurred');
-      }
+    loginBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      loginPopup.style.display = 'flex';
+    });
+    closeLogin.addEventListener('click', () => {
+      loginPopup.style.display = 'none';
     });
   </script>
 </body>
