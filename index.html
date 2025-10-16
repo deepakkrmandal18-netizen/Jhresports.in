@@ -68,23 +68,22 @@
       border-radius: 8px;
     }
 
-    .btn-insta {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #e53935;
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      font-size: 18px;
-      border-radius: 4px;
-      cursor: pointer;
-      text-decoration: none;
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
       margin-top: 24px;
     }
-    .btn-insta img {
-      width: 20px;
-      height: 20px;
+    .social-links img {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .social-links img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 10px #e53935;
     }
 
     .contact-section {
@@ -113,7 +112,6 @@
       font-size: 14px;
     }
 
-    /* Popup Styles */
     .popup-overlay {
       position: fixed;
       top: 0; left: 0;
@@ -176,9 +174,22 @@
   </nav>
 
   <div id="home" class="content">
-    <a href="https://www.instagram.com/jhresports.in" target="_blank" class="btn-insta">
-      <img src="insta.png" alt="Instagram" /> INSTA
-    </a>
+    <div class="social-links">
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/jhresports.in?igsh=MWFuc21rd2ZpNTM5ZQ==" target="_blank">
+        <img src="4E5EF5D4-950C-4A6C-9B89-17CF61A8B039.jpeg" alt="Instagram" />
+      </a>
+
+      <!-- Discord -->
+      <a href="https://discord.gg/EYyqTfmt" target="_blank">
+        <img src="C18B5B1A-CFF7-47F3-B61F-3536ACE2D2C4.jpeg" alt="Discord" />
+      </a>
+
+      <!-- WhatsApp -->
+      <a href="https://wa.me/918757298967" target="_blank">
+        <img src="B126FEBA-C6B2-421D-AE28-904581A23F02.jpeg" alt="WhatsApp" />
+      </a>
+    </div>
   </div>
 
   <div id="lineup" class="content">
@@ -201,13 +212,12 @@
     &copy; 2025 JHR ESPORTS. All Rights Reserved.
   </footer>
 
-  <!-- Popup -->
   <div class="popup-overlay" id="schedulePopup">
     <div class="popup-content">
       <h2>TOURNAMENT SCHEDULE</h2>
       <p>M1 - ERANGEL &nbsp;&nbsp; <strong>9:12</strong></p>
       <p>M2 - MIRAMAR &nbsp;&nbsp; <strong>9:52</strong></p>
-      <p>M3 - RONDO &nbsp;&nbsp; <strong> 10:32</strong></p>
+      <p>M3 - RONDO &nbsp;&nbsp; <strong>10:32</strong></p>
       <button class="close-btn" id="closePopup">Close</button>
     </div>
   </div>
@@ -228,7 +238,6 @@
       document.body.classList.remove('blurred');
     });
 
-    // Optional: close popup when clicking outside
     schedulePopup.addEventListener('click', (e) => {
       if (e.target === schedulePopup) {
         schedulePopup.style.display = 'none';
